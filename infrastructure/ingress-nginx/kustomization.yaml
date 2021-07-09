@@ -4,3 +4,4 @@ namespace: ingress-nginx
 resources:
   - helmrelease.yaml
   - helmrepo.yaml
+  - namespace.yaml

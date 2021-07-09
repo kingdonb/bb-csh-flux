@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webhook-receiver
+  namespace: flux-system
+spec:
+  rules:
+  - host: howard.moomboo.space
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: notification-webhook
+            port:
+              number: 9292

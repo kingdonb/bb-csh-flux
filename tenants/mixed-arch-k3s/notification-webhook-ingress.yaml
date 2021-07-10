@@ -14,4 +14,4 @@ spec:
           service:
             name: notification-webhook
             port:
-              number: 9292
+              number: 80

@@ -8,3 +8,5 @@ spec:
   resources:
     - kind: GitRepository
       name: flux-system
+  secretRef:
+    - name: webhook-token

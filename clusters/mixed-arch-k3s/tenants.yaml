@@ -8,6 +8,7 @@ spec:
   dependsOn:
     - name: kured
     - name: ingress-nginx
+    - name: my-secrets
   interval: 5m
   timeout: 2m
   sourceRef:

@@ -16,7 +16,7 @@ spec:
         - values.yaml
         - values-okteto.yaml
   interval: 30m0s
-  releaseName: okteto-flux
+  releaseName: flux
   targetNamespace: fluxcd
   valuesFrom:
     - kind: Secret

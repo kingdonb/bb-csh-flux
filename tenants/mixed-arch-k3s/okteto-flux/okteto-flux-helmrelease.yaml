@@ -26,6 +26,8 @@ spec:
       optional: false
   values:
     flux:
+      rbac:
+        create: true
       git:
         url: "ssh://git@bitbucket.org/kingdonb/csh-flux.git"
         branch: main

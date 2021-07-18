@@ -1,0 +1,34 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: okteto-flux
+  namespace: okteto
+spec:
+  chart:
+    spec:
+      chart: flux
+      sourceRef:
+        kind: HelmRepository
+        name: okteto-apps
+      version: 1.10.0
+      valuesFiles:
+        - values.yaml
+        - values-okteto.yaml
+  interval: 30m0s
+  releaseName: okteto-flux
+  targetNamespace: fluxcd
+  valuesFrom:
+    - kind: Secret
+      name: flux-recv-webhook-token
+      valuesKey: token
+      targetPath: secret
+      optional: false
+  values:
+    flux:
+      git:
+        url: "ssh://git@bitbucket.org/kingdonb/csh-flux.git"
+        branch: main
+        path: manifests
+        user: "Flux Automation"
+        email: "flux.v1@nerdland.info"

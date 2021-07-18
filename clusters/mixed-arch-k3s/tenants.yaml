@@ -17,3 +17,8 @@ spec:
   path: ./tenants/mixed-arch-k3s
   prune: true
   validation: client
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: okteto

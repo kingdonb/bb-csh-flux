@@ -15,10 +15,11 @@ spec:
       valuesFiles:
         - values.yaml
         - values-okteto.yaml
+  install:
+    skipCRDs: true
   interval: 30m0s
   releaseName: flux
   targetNamespace: fluxcd
-  skipCRDs: true
   valuesFrom:
     - kind: Secret
       name: flux-recv-webhook-token

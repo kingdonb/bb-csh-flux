@@ -28,6 +28,10 @@ spec:
     flux:
       rbac:
         create: true
+      serviceAccount:
+        create: true
+      clusterRole:
+        create: true
       git:
         url: "ssh://git@bitbucket.org/kingdonb/csh-flux.git"
         branch: main
